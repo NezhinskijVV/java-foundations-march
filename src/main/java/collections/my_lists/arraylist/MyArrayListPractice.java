@@ -1,4 +1,4 @@
-package collections.my_lists;
+package collections.my_lists.arraylist;
 
 public class MyArrayListPractice {
     public static void main(String[] args) {
@@ -38,5 +38,6 @@ public class MyArrayListPractice {
 //        System.out.println(list.subList(1, 3));
 
         System.out.println(myList.subList(1, 3));
+        System.out.println('\ufeff');
     }
 }

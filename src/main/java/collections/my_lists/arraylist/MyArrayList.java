@@ -1,5 +1,7 @@
-package collections.my_lists;
+package collections.my_lists.arraylist;
 
+
+import java.util.Arrays;
 
 public class MyArrayList {
     private Object[] array;  //скрытый массив (внутри arrayList)
@@ -72,9 +74,6 @@ public class MyArrayList {
 
     }
 
-    public int indexOf(Object o) {
-        return 0;
-    }
 
     public Object remove(int index) {
         return null;
@@ -108,6 +107,35 @@ public class MyArrayList {
         }
         sb.append('}');
         return sb.toString();
+    }
+
+    public int indexOf(Object o) {
+        for (int i = 0; i < size; i++) {
+            if (o.equals(array[i])) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof MyArrayList)) return false;
+
+        MyArrayList arrayList = (MyArrayList) o;
+
+        if (size != arrayList.size) return false;
+        // Probably incorrect - comparing Object[] arrays with Arrays.equals
+        return Arrays.equals(array, arrayList.array);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Arrays.hashCode(array);
+        result = 31 * result + size;
+        return result;
     }
 }
 
