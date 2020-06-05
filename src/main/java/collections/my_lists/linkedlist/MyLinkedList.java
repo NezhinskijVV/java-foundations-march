@@ -91,7 +91,7 @@ public class MyLinkedList {
 
     public Object get(int index) {
         Node curNode = startNode;
-        for (int i = 0; i < index - 1; i++) {
+        for (int i = 0; i < index; i++) {
             curNode = curNode.getNext();
         }
 
